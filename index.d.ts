@@ -64,6 +64,7 @@ export interface ICodeMirror {
         focus?: boolean;
     };
     scroll?: ISetScrollOptions;
+    style?: React.CSSProperties;
 }
 export interface IControlledCodeMirror extends ICodeMirror {
     onBeforeChange: (editor: codemirror.Editor, data: codemirror.EditorChange, value: string) => void;

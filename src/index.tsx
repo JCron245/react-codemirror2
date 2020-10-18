@@ -78,6 +78,7 @@ export interface ICodeMirror {
   options?: codemirror.EditorConfiguration
   selection?: { ranges: Array<ISetSelectionOptions>, focus?: boolean };
   scroll?: ISetScrollOptions;
+  style?: React.CSSProperties;
 }
 
 export interface IControlledCodeMirror extends ICodeMirror {
@@ -624,8 +625,9 @@ export class Controlled extends React.Component<IControlledCodeMirror, any> {
     if (SERVER_RENDERED) return null;
 
     let className = this.props.className ? `react-codemirror2 ${this.props.className}` : 'react-codemirror2';
+    let style = this.props.style ? this.props.style : {};
 
-    return <div className={className} ref={self => this.ref = self}/>
+    return <div className={className} style={style} ref={self => this.ref = self}/>
   }
 }
 
@@ -832,7 +834,8 @@ export class UnControlled extends React.Component<IUnControlledCodeMirror, any> 
     if (SERVER_RENDERED) return null;
 
     let className = this.props.className ? `react-codemirror2 ${this.props.className}` : 'react-codemirror2';
+    let style = this.props.style ? this.props.style : {};
 
-    return <div className={className} ref={self => this.ref = self}/>
+    return <div className={className} style={style} ref={self => this.ref = self}/>
   }
 }

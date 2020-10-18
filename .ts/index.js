@@ -442,7 +442,8 @@ var Controlled = (function (_super) {
         if (SERVER_RENDERED)
             return null;
         var className = this.props.className ? "react-codemirror2 " + this.props.className : 'react-codemirror2';
-        return React.createElement("div", { className: className, ref: function (self) { return _this.ref = self; } });
+        var style = this.props.style ? this.props.style : {};
+        return React.createElement("div", { className: className, style: style, ref: function (self) { return _this.ref = self; } });
     };
     return Controlled;
 }(React.Component));
@@ -585,7 +586,8 @@ var UnControlled = (function (_super) {
         if (SERVER_RENDERED)
             return null;
         var className = this.props.className ? "react-codemirror2 " + this.props.className : 'react-codemirror2';
-        return React.createElement("div", { className: className, ref: function (self) { return _this.ref = self; } });
+        var style = this.props.style ? this.props.style : {};
+        return React.createElement("div", { className: className, style: style, ref: function (self) { return _this.ref = self; } });
     };
     return UnControlled;
 }(React.Component));
